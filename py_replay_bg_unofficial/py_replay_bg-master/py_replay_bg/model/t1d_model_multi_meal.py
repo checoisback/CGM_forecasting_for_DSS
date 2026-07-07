@@ -803,7 +803,7 @@ class T1DModelMultiMeal:
 
             # TODO: add vo2
             # TODO: add meal_type to return
-            return (self.x[20, :].copy(),
+            return (self.x[21, :].copy(),
                     self.x[:, -1].copy(),
                     self.CGM.copy(),
                     bolus * mp.to_g,
