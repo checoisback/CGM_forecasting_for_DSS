@@ -1,0 +1,21 @@
+# Direct runtime dependencies of py_replay_bg.
+# The authoritative source is pyproject.toml ([project.dependencies]); this file
+# is kept for convenience (`pip install -r requirements.txt`).
+# Do NOT add transitive dependencies here - pip resolves those automatically.
+numpy>=1.26
+pandas>=2.2
+scipy>=1.12
+matplotlib>=3.8
+numba>=0.59
+emcee>=3.1
+tqdm>=4.66
+py-agata>=0.0.8
+
+# Security pins for transitive dependencies flagged by osv-scanner.
+# These are not direct dependencies but are pinned here to enforce safe minimum
+# versions until the packages that pull them in raise their own lower bounds.
+pillow>=12.2.0   # CVEs: GHSA-3f63-hfp8-52jq (Critical, 9.3), GHSA-j7hp-h8jx-5ppr (High, 8.8),
+                 #       PYSEC-2023-227 (High, 8.7), GHSA-44wm-f244-xhp3 (High, 7.3),
+                 #       PYSEC-2026-165 (Medium, 5.5), GHSA-r73j-pqj5-w3x7 (Medium, 5.5),
+                 #       PYSEC-2023-175 (Unknown). All fixed at >=12.2.0.
+pygments>=2.20.0 # CVEs: PYSEC-2023-117 (Medium, 6.8), GHSA-5239-wwwm-4pmq (Low, 3.3).
